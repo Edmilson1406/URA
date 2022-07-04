@@ -1,0 +1,19 @@
+{
+  "name": "ura",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon cep3.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "twilio": "^3.77.3"
+  },
+  "devDependencies": {
+    "request": "^2.88.2"
+  }
+}
