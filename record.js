@@ -17,7 +17,7 @@ app.post('/', (req, resp) =>{
 
     record.record({
         maxlength: 10,
-        transcribe: true,
+        //transcribe: true,
         action: '/record'
         
     });
@@ -26,13 +26,16 @@ app.post('/', (req, resp) =>{
 })
 
 app.post('/record', (req, resp) => {
-    const re = req.body
-    console.log(re)
+    const re = req.body;
+    const re2 = req.params;
+    //console.log(re2);
+    console.log(re);
+    console.log(re.RecordingUrl);
     const replay = new VoiceResponse();
-    replay.say({
-        language: 'pt-BR'
-    }, re);
-    resp.type('text/xml');
+    replay.play({
+        loop: 1
+    }, (`${re.RecordingUrl}.mp3`));
+    //resp.type('text/xml');
     resp.send(replay.toString());
 })
 
